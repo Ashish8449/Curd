@@ -20,9 +20,13 @@ export const deleteUser = (req, res) => {
   res.send("User deleted Successfully");
 };
 export const updateUser = (req, res) => {
-  const user = users.find((user) => user.id == req.params.id);
+  console.log(req.body);
+  console.log(users);
+  const user = users.find((user) => user.id == req.body.id);
+  console.log(user);
   user.name = req.body.name;
-  user.email = req.body.email;
-  user.contact = req.body.contact;
+  user.number = req.body.number;
+  user.id = req.body.id;
+  // console.log(user);
   res.send("User  Successfully updated");
 };
